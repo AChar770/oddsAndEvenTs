@@ -1,13 +1,13 @@
 //state in object to hold the data
-const state ={
+const state = {
   bank: [],
   odds: [],
-  evens: []
+  evens: [],
 };
 
 function addNumber(num) {
-    state.bank.push(num);
-    render();
+  state.bank.push(num);
+  render();
 }
 function sortOne() {
   if (state.bank.length === 0) return;
@@ -17,7 +17,7 @@ function sortOne() {
   } else {
     state.odds.push(number);
   }
-  
+
   render();
 }
 
@@ -30,67 +30,70 @@ function sortAll() {
       state.odds.push(number);
     }
   }
-  
+
   render();
 }
 
 function FormComponent() {
-    const form = document.createElement('form');
+  const form = document.createElement("form");
 
-  const label = document.createElement('label');
-  label.textContent = 'Add a number to the bank ';
-  
-  const input = document.createElement('input');
-  input.type = 'number';
-  input.id = 'number-input';
-  
-  const addButton = document.createElement('button');
-  addButton.type = 'submit';
-  addButton.textContent = 'Add number';
-  
-  const sortOneButton = document.createElement('button');
-  sortOneButton.type = 'button';
-  sortOneButton.textContent = 'Sort 1';
-  
-  const sortAllButton = document.createElement('button');
-  sortAllButton.type = 'button';
-  sortAllButton.textContent = 'Sort All';
+  const label = document.createElement("label");
+  label.textContent = "Add a number to the bank ";
+
+  const input = document.createElement("input");
+  input.type = "number";
+  input.id = "number-input";
+
+  const addButton = document.createElement("button");
+  addButton.type = "submit";
+  addButton.textContent = "Add number";
+
+  const sortOneButton = document.createElement("button");
+  sortOneButton.type = "button";
+  sortOneButton.textContent = "Sort 1";
+
+  const sortAllButton = document.createElement("button");
+  sortAllButton.type = "button";
+  sortAllButton.textContent = "Sort All";
 }
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const value = parseInt(input.value);
-    if (!isNaN(value)) {
-      addNumber(value);
-      input.value = '';
-    }
-  });
-  
-  sortOneButton.addEventListener('click', sortOne);
-  sortAllButton.addEventListener('click', sortAll);
-  
-  form.appendChild(label);
-  form.appendChild(input);
-  form.appendChild(addButton);
-  form.appendChild(sortOneButton);
-  form.appendChild(sortAllButton);
-  
-  return form;
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const value = parseInt(input.value);
+  if (!isNaN(value)) {
+    addNumber(value);
+    input.value = "";
+  }
+});
+
+sortOneButton.addEventListener("click", sortOne);
+sortAllButton.addEventListener("click", sortAll);
+
+form.appendChild(label);
+form.appendChild(input);
+form.appendChild(addButton);
+form.appendChild(sortOneButton);
+form.appendChild(sortAllButton);
+
+return form;
 
 function NumberSection(title, numbers) {
-  const section = document.createElement('div');
-  const heading = document.createElement('h2');
+  const section = document.createElement("div");
+  const heading = document.createElement("h2");
   heading.textContent = title;
 
-  const numberDisplay = document.createElement('div');
-  numberDisplay.textContent = numbers.join(' ');
-  numberDisplay.style.border = '1px solid black';
-  numberDisplay.style.padding = '10px';
-  numberDisplay.style.borderRadius = '5px';
-  numberDisplay.style.minHeight = '30px';
-  
+  const numberDisplay = document.createElement("div");
+  numberDisplay.textContent = numbers.join(" ");
+  numberDisplay.style.border = "1px solid black";
+  numberDisplay.style.padding = "10px";
+  numberDisplay.style.borderRadius = "5px";
+  numberDisplay.style.minHeight = "30px";
+
   section.appendChild(heading);
   section.appendChild(numberDisplay);
-  
+
   return section;
 }
+
+function render() {
+  const app = document.getElementById('app');
