@@ -97,3 +97,9 @@ function NumberSection(title, numbers) {
 
 function render() {
   const app = document.getElementById('app');
+  app.innerHTML = ''; //clears the app container
+  const title = document.createElement(h1);
+  title.textContent = 'Odds and EvenTs';
+  app.appendChild(title);
+
+  
