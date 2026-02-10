@@ -76,4 +76,21 @@ form.addEventListener('submit', (e) => {
   form.appendChild(sortAllButton);
   
   return form;
+
+function NumberSection(title, numbers) {
+  const section = document.createElement('div');
+  const heading = document.createElement('h2');
+  heading.textContent = title;
+
+  const numberDisplay = document.createElement('div');
+  numberDisplay.textContent = numbers.join(' ');
+  numberDisplay.style.border = '1px solid black';
+  numberDisplay.style.padding = '10px';
+  numberDisplay.style.borderRadius = '5px';
+  numberDisplay.style.minHeight = '30px';
+  
+  section.appendChild(heading);
+  section.appendChild(numberDisplay);
+  
+  return section;
 }
