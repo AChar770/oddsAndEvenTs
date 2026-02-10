@@ -1,6 +1,11 @@
 //state in object to hold the data
 const state ={
-  numberBank: [],
+  bank: [],
   odds: [],
   evens: []
 };
+
+function addNumber(num) {
+    state.bank.push(num);
+    render();
+}
