@@ -56,3 +56,24 @@ function FormComponent() {
   sortAllButton.type = 'button';
   sortAllButton.textContent = 'Sort All';
 }
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const value = parseInt(input.value);
+    if (!isNaN(value)) {
+      addNumber(value);
+      input.value = '';
+    }
+  });
+  
+  sortOneButton.addEventListener('click', sortOne);
+  sortAllButton.addEventListener('click', sortAll);
+  
+  form.appendChild(label);
+  form.appendChild(input);
+  form.appendChild(addButton);
+  form.appendChild(sortOneButton);
+  form.appendChild(sortAllButton);
+  
+  return form;
+}
