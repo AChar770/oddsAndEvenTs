@@ -101,5 +101,9 @@ function render() {
   const title = document.createElement(h1);
   title.textContent = 'Odds and EvenTs';
   app.appendChild(title);
+  app.appendChild(FormComponent());
+  app.appendChild(NumberSection('Bank', state.bank));
+  app.appendChild(NumberSection('Odds', state.odds));
+  app.appendChild(NumberSection('Evens', state.evens));}
 
-  
+  render();
