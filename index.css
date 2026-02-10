@@ -58,3 +58,29 @@ button[type="button"]:hover {
   background-color: #444;
 }
 
+form {
+  margin-bottom: 35px;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+label {
+  font-weight: bold;
+  color: #444;
+}
+
+input[type="number"] {
+  padding: 8px 12px;
+  font-size: 16px;
+  margin-right: 10px;
+  border: 2px solid #999;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #333;
+}
