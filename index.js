@@ -55,27 +55,27 @@ function FormComponent() {
   const sortAllButton = document.createElement("button");
   sortAllButton.type = "button";
   sortAllButton.textContent = "Sort All";
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const value = parseInt(input.value);
+    if (!isNaN(value)) {
+      addNumber(value);
+      input.value = "";
+    }
+  });
+
+  sortOneButton.addEventListener("click", sortOne);
+  sortAllButton.addEventListener("click", sortAll);
+
+  form.appendChild(label);
+  form.appendChild(input);
+  form.appendChild(addButton);
+  form.appendChild(sortOneButton);
+  form.appendChild(sortAllButton);
+
+  return form;
 }
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const value = parseInt(input.value);
-  if (!isNaN(value)) {
-    addNumber(value);
-    input.value = "";
-  }
-});
-
-sortOneButton.addEventListener("click", sortOne);
-sortAllButton.addEventListener("click", sortAll);
-
-form.appendChild(label);
-form.appendChild(input);
-form.appendChild(addButton);
-form.appendChild(sortOneButton);
-form.appendChild(sortAllButton);
-
-return form;
 
 function NumberSection(title, numbers) {
   const section = document.createElement("div");
@@ -96,14 +96,15 @@ function NumberSection(title, numbers) {
 }
 
 function render() {
-  const app = document.getElementById('app');
-  app.innerHTML = ''; //clears the app container
-  const title = document.createElement(h1);
-  title.textContent = 'Odds and EvenTs';
+  const app = document.getElementById("app");
+  app.innerHTML = ""; //clears the app container
+  const title = document.createElement("h1");
+  title.textContent = "Odds and EvenTs";
   app.appendChild(title);
   app.appendChild(FormComponent());
-  app.appendChild(NumberSection('Bank', state.bank));
-  app.appendChild(NumberSection('Odds', state.odds));
-  app.appendChild(NumberSection('Evens', state.evens));}
+  app.appendChild(NumberSection("Bank", state.bank));
+  app.appendChild(NumberSection("Odds", state.odds));
+  app.appendChild(NumberSection("Evens", state.evens));
+}
 
-  render();
+render();
