@@ -33,3 +33,26 @@ function sortAll() {
   
   render();
 }
+
+function FormComponent() {
+    const form = document.createElement('form');
+
+  const label = document.createElement('label');
+  label.textContent = 'Add a number to the bank ';
+  
+  const input = document.createElement('input');
+  input.type = 'number';
+  input.id = 'number-input';
+  
+  const addButton = document.createElement('button');
+  addButton.type = 'submit';
+  addButton.textContent = 'Add number';
+  
+  const sortOneButton = document.createElement('button');
+  sortOneButton.type = 'button';
+  sortOneButton.textContent = 'Sort 1';
+  
+  const sortAllButton = document.createElement('button');
+  sortAllButton.type = 'button';
+  sortAllButton.textContent = 'Sort All';
+}
